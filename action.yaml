@@ -1,0 +1,14 @@
+name: "Custom Action with Docker"
+inputs:
+  who-to-greet:
+    description: "Who To Greet"
+    required: True
+    default: 'World'
+outputs:
+  time:
+    description: "The time we greeted you"
+runs:
+  using: "docker"
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet}}
